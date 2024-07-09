@@ -41,9 +41,7 @@ export const SupabaseProvider = ({ children }) => {
   }
 
   return (
-    <SupabaseContext.Provider value={value}>
-      {!loading && children}
-    </SupabaseContext.Provider>
+    SupabaseContext.Provider({value: value, children: !loading && children})
   )
 }
 
